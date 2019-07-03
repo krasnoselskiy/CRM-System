@@ -3,16 +3,16 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
-import VueMaterial from 'vue-material'
-import dateFilter from './filters/date.filter'
+import Vuelidate from 'vuelidate';
+import VueMaterial from 'vue-material';
+import dateFilter from './filters/date.filter';
 
 Vue.config.productionTip = false;
 
+Vue.use(Vuelidate);
 Vue.use(VueMaterial);
 
 Vue.filter('date', dateFilter);
-
-
 
 new Vue({
   router,
