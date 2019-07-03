@@ -1,4 +1,4 @@
-# crm
+# CRM System
 
 ## Project setup
 ```
