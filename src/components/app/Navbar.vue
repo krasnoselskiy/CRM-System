@@ -10,30 +10,36 @@
 
       <ul class="right hide-on-small-and-down">
         <li>
-          <a
-              class="dropdown-trigger black-text"
-              href="#"
-              data-target="dropdown"
-          >
-            USER NAME
-            <i class="material-icons right">arrow_drop_down</i>
-          </a>
+          <md-menu>
+            <md-button class="md-icon-button" md-menu-trigger>
+              <md-icon>person</md-icon>
+            </md-button>
 
-          <ul id='dropdown' class='dropdown-content'>
-            <li>
-              <a href="#" class="black-text">
-                <i class="material-icons">account_circle</i>Профиль
-              </a>
-            </li>
-            <li class="divider" tabindex="-1"></li>
-            <li>
-              <a href="#" class="black-text">
-                <i class="material-icons">assignment_return</i>Выйти
-              </a>
-            </li>
-          </ul>
+            <md-menu-content>
+              <md-menu-item>
+                <router-link to="/profile" class="black-text">
+                  <i class="material-icons">account_circle</i> Профиль
+                </router-link>
+              </md-menu-item>
+
+              <md-menu-item>
+                <router-link to="/logout" class="black-text">
+                  <i class="material-icons">exit_to_app</i> Выйти
+                </router-link>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
         </li>
       </ul>
     </div>
   </nav>
 </template>
+
+<style>
+  .nav-wrapper .md-menu {
+    display: flex;
+  }
+  .md-menu-content {
+    z-index: 1003;
+  }
+</style>

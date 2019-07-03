@@ -25,7 +25,7 @@
   export default {
     name: 'main-layout',
     data: () => ({
-      isOpen: false
+      isOpen: true
     }),
     components: {
       Navbar, Sidebar
