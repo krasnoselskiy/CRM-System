@@ -5,15 +5,14 @@
     </div>
 
     <form class="form">
-      <div class="input-field" >
+      <div class="input-field set_category">
         <select>
-          <option
-          >name cat</option>
+          <option>name cat</option>
         </select>
         <label>Выберите категорию</label>
       </div>
 
-      <p>
+      <div class="record_type">
         <label>
           <input
               class="with-gap"
@@ -23,9 +22,9 @@
           />
           <span>Доход</span>
         </label>
-      </p>
+      </div>
 
-      <p>
+      <div class="record_type">
         <label>
           <input
               class="with-gap"
@@ -35,7 +34,7 @@
           />
           <span>Расход</span>
         </label>
-      </p>
+      </div>
 
       <div class="input-field">
         <input
@@ -63,3 +62,16 @@
     </form>
   </div>
 </template>
+
+<style>
+  .set_category {
+    padding-bottom: 25px;
+  }
+  .record_type {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  [type="radio"]:not(:checked)+span, [type="radio"]:checked+span {
+    padding-left: 25px;
+  }
+</style>
