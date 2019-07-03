@@ -5,10 +5,16 @@
         <a href="#" @click.prevent="$emit('toggleSidebar')">
           <i class="material-icons black-text">dehaze</i>
         </a>
-        <span class="black-text">12.12.12</span>
+        <span class="black-text">{{ date | date('date') }}</span>
       </div>
 
-      <ul class="right hide-on-small-and-down">
+      <div class="logo">
+        <router-link to="/">
+          CRM System
+        </router-link>
+      </div>
+
+      <ul class="drop_call right hide-on-small-and-down">
         <li>
           <md-menu>
             <md-button class="md-icon-button" md-menu-trigger>
@@ -22,10 +28,10 @@
                 </router-link>
               </md-menu-item>
 
-              <md-menu-item>
-                <router-link to="/logout" class="black-text">
+              <md-menu-item @click="logout">
+                <a class="black-text">
                   <i class="material-icons">exit_to_app</i> Выйти
-                </router-link>
+                </a>
               </md-menu-item>
             </md-menu-content>
           </md-menu>
@@ -42,4 +48,31 @@
   .md-menu-content {
     z-index: 1003;
   }
+  .logo a {
+    font-size: 24px;
+    color: #000;
+  }
 </style>
+
+<script>
+  import { setInterval, clearInterval } from 'timers';
+  export default {
+    data: () => ({
+      date: new Date(),
+      interval: null,
+    }),
+    mounted() {
+      this.interval = setInterval(() => {
+        this.date = new Date()
+      }, 1000)
+    },
+    methods: {
+      logout() {
+        this.$router.push('/login?message=logout');
+      }
+    },
+    beforeDestroy() {
+      clearInterval(this.interval);
+    }
+  }
+</script>

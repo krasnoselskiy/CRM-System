@@ -4,10 +4,15 @@ import router from './router';
 import store from './store';
 
 import VueMaterial from 'vue-material'
-
-Vue.use(VueMaterial)
+import dateFilter from './filters/date.filter'
 
 Vue.config.productionTip = false;
+
+Vue.use(VueMaterial);
+
+Vue.filter('date', dateFilter);
+
+
 
 new Vue({
   router,
